@@ -27,6 +27,8 @@ function showPosition(position) {
         }
     });
 
+
+
 }
 
 function showEvents(json) {
