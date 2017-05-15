@@ -18,7 +18,7 @@ function showPosition(position) {
         success: function (json) {
             console.log(json);
             var e = document.getElementById("events");
-            e.innerHTML = json.page.totalElements + " events found.";
+            e.innerHTML = json.page.totalElements + " events found. Click the markers on the map for more information.";
             // showEvents(json);
             initMap(position, json);
         },
