@@ -19,7 +19,7 @@ function showPosition(position) {
             console.log(json);
             var e = document.getElementById("events");
             e.innerHTML = json.page.totalElements + " events found.";
-            showEvents(json);
+            // showEvents(json);
             initMap(position, json);
         },
         error: function (xhr, status, err) {
@@ -31,13 +31,13 @@ function showPosition(position) {
 
 }
 
-function showEvents(json) {
-    for (var i = 0; i < json.page.size; i++) {
-        $("#events").append("<p><a href='" + json._embedded.events[i].url + "'>" + json._embedded.events[i].name + "</a></p>");
-        //make clickable links to access ticket info from api
-        //  ._embedded.events["0"].url
-    }
-}
+// function showEvents(json) {
+//     for (var i = 0; i < json.page.size; i++) {
+//         $("#events").append("<p><a href='" + json._embedded.events[i].url + "'>" + json._embedded.events[i].name + "</a></p>");
+//         //make clickable links to access ticket info from api
+//         //  ._embedded.events["0"].url
+//     }
+// }
 
 
 function initMap(position, json) {
@@ -51,13 +51,13 @@ function initMap(position, json) {
     });
     for (var i = 0; i < json.page.size; i++) {
         addMarker(map, json._embedded.events[i]);
-    }
+    } //not showing all events, can't figure out why????
 }
 
 function addMarker(map, event) {
     //build template for infowindow with venue, artist, and pic
-    var contentString = "";
-
+    var contentString = "<div class='eventListing'><p class='title'><a href='" + event.url + "'>" + event.name + "</a></p><p class='date'>" + event.dates.start.localDate + "</p><p class='discription'>" + event.discription + "</p></div>";
+    console.log(contentString);
 
     var infowindow = new google.maps.InfoWindow({
         content: contentString
@@ -76,9 +76,7 @@ function addMarker(map, event) {
     marker.addListener('click', function () {
         infowindow.open(map, marker);
     });
-}
-
-
+};
 
 
 getLocation();
