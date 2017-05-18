@@ -56,11 +56,13 @@ function initMap(position, json) {
 
 function addMarker(map, event) {
     //build template for infowindow with venue, artist, and pic
-    var contentString = "<div class='eventListing'><p class='title'><a href='" + event.url + "'>" + event.name + "</a></p><p class='date'>" + event.dates.start.localDate + "</p><p class='discription'>" + event.discription + "</p></div>";
+    var contentString = "<div class='eventListing'><p class='title'><a href='" + event.url + "'>" + event.name + "</a></p><p class='date'>" + event.dates.start.localDate + "</p><p class='discription'>" + event.description + "</p></div>";
+    var contentImg = "<img src='" + event.imgages / url + "' alt='" + event.images / attribution + "'>"
     console.log(contentString);
 
     var infowindow = new google.maps.InfoWindow({
-        content: contentString
+        content: contentImg,
+        contentString
     });
 
 

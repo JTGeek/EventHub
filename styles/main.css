@@ -4,13 +4,30 @@
      padding: 0;
      height: 100%;
      width: 100%;
+     background-image: misc/background1.jpg;
+     /*not working???*/
  }
 
- #content {
-     width: 100%;
+ div {
+     margin: 0 auto;
+ }
+
+ #location {
+     border: 1px black solid;
+     text-align: center;
+     font-size: xx-large;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+     color: red;
+ }
+
+ #events {
+     text-align: center;
+     font-size: x-large;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+     font-style: italic;
  }
 
  #map {
-     width: 500px;
-     height: 400px;
+     width: 95%;
+     height: 80%;
  }
