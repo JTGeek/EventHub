@@ -1,0 +1,10 @@
+
+Uniform Pictures and titles on the infowindow
+
+have clicking an option on the list have it highlight and show infowindow
+
+clicking on a new marker or list link closes exising infowindow and returns any highlighted markers to regular
+
+seperate info/ticket link in list and possibily a small one under the pic/title in the info window
+
+

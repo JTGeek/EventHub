@@ -29,5 +29,10 @@
 
  #map {
      width: 95%;
-     height: 80%;
+     height: 70%;
+ }
+
+ .eventImg {
+     max-height: 200px;
+     float: left;
  }
