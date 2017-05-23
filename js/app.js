@@ -50,7 +50,13 @@ function mapEvents(map, position) {
 }
 
 function addMarker(map, event) {
-    var contentString = "<div class='eventListing'><img src='" + event.images[0].url + "' alt='" + event.images[0].attribution + "' class='eventImg'><p class='title'><a href='" + event.url + "'>" + event.name + "</a></p></div>";
+    if (event._embedded.venues[0].images) {
+        venuepic = event._embedded.venues[0].images[0].url;
+    } else {
+        venuepic = "misc/noimg.jpg";
+    };
+    var contentString = "<div class='eventListing'><img src='" + venuepic + "' alt='" + event._embedded.venues[0].name + "' class='eventImg'><p><a href='" + event._embedded.venues[0].url +
+        "'><h1 class='venueName'>" + event._embedded.venues[0].name + "</h1></a></p><p><h3 class 'venueAddress>" + event._embedded.venues[0].address.line1 + "</h3></p></div>";
 
     var infowindow = new google.maps.InfoWindow({
         content: contentString
@@ -74,7 +80,15 @@ function addMarker(map, event) {
 
 function showEvents(event) {
     console.log("list item" + event);
-    $("#listing").append("<p><a href='" + event.url + "'>" + event.name + "</a></p>");
+    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.dates.start.localTime + "</td><td>" + event.dates.start.localDate + "</td><td>" + "<a href='" + event.url + "'>Buy Tickets</a></td></tr>");
+
+
+    // $("#name").append("<p>" + event.name + "</a></p>");
+    // $("#venue").append(event._embedded.venues.name);
+    // $("#time").append(event.dates.start.localTime);
+    // $("#date").append(event.dates.start.localDate);
+    // $("#link").append("<a href='" + event.url + "'>Buy Tickets</a>");
+
 
     //add event dates, venue, time?, price?, etc
 

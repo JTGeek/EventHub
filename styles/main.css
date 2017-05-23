@@ -33,6 +33,28 @@
  }
 
  .eventImg {
-     max-height: 200px;
+     max-height: 150px;
      float: left;
+ }
+
+ .venueName,
+ .venueAddress {
+     margin: 0 auto;
+ }
+
+ table {
+     font-family: arial, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+ }
+
+ td,
+ th {
+     border: 1px solid #dddddd;
+     text-align: left;
+     padding: 8px;
+ }
+
+ tr:nth-child(even) {
+     background-color: #dddddd;
  }
