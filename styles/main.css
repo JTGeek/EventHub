@@ -4,7 +4,7 @@
      padding: 0;
      height: 100%;
      width: 100%;
-     background-image: misc/background1.jpg;
+     background-image: url("misc/background1.jpg");
      /*not working???*/
  }
 
@@ -30,6 +30,10 @@
  #map {
      width: 95%;
      height: 70%;
+ }
+
+ #list {
+     width: 95%;
  }
 
  .eventImg {
