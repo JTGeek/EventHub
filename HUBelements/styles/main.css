@@ -1,0 +1,62 @@
+ html,
+ body {
+     margin: 0;
+     padding: 0;
+     height: 100%;
+     width: 100%;
+ }
+
+ div {
+     margin: 0 auto;
+ }
+
+ #location {
+     border: 1px black solid;
+     text-align: center;
+     font-size: xx-large;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+     color: red;
+ }
+
+ #events {
+     text-align: center;
+     font-size: x-large;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+     font-style: italic;
+ }
+
+ #map {
+     width: 95%;
+     height: 70%;
+ }
+
+ #list {
+     width: 95%;
+ }
+
+ .eventImg {
+     max-height: 150px;
+     float: left;
+ }
+
+ .venueName,
+ .venueAddress {
+     margin: 0 auto;
+ }
+
+ table {
+     font-family: arial, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+ }
+
+ td,
+ th {
+     border: 1px solid #dddddd;
+     text-align: left;
+     padding: 8px;
+ }
+
+ tr:nth-child(even) {
+     background-color: #dddddd;
+ }

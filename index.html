@@ -1,33 +1,168 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Orginal TEmplate:
+	"Intensify by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)"
+-->
+<html>
 
 <head>
-    <title>Indie-Live</title>
-    <meta name="description" content="What's playing in your town?">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles/main.css" rel="stylesheet">
+	<title>EventHub</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Local Events for the Modern Nomad">
+	<meta name="keywords" content="Live Events,Music,Sports,Theater,Comedy,Travel,Local,Event,Nomad,Modern">
+	<meta name="author" content="James Timberlake">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
-    <div id="location">What are we doing tonight?</div>
-    <div id="events"></div>
-    <div id="map"></div>
-    <div id="list">
-        <table id="listTable">
-            <tr>
-                <th>Artist</th>
-                <th>Venue</th>
-                <th>Time</th>
-                <th>Date</th>
-                <th>Tickets</th>
-            </tr>
-        </table>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCB389GmtyB3Wk0Wz2sKPlXoADFIahOS8&callback=initMap" async
-        defer></script>
+
+	<!-- Header -->
+	<header id="header">
+		<nav class="left">
+			<a href="#menu"><span>Menu</span></a>
+		</nav>
+		<a href="index.html" class="logo">Event Hub</a>
+	</header>
+
+	<!-- Menu -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="HUB.html">Events</a></li>
+			<li><a href="About.html">About</a></li>
+		</ul>
+	</nav>
+
+	<!-- Banner -->
+	<section id="banner">
+		<div class="content">
+			<h1>Event Hub</h1>
+			<p><span>Enjoy awesome local events. No matter where you find yourself.</span></p>
+			<ul class="actions">
+				<li><a href="#one" class="button scrolly">Get Started</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="wrapper">
+		<div class="inner flex flex-3">
+			<div class="flex-item left">
+				<div>
+					<h3>Live Music</h3>
+					<p>Explore the community through local events or impress with a Big International Star.</p>
+				</div>
+				<div>
+					<h3>Theater/Opera</h3>
+					<p>You don't have to be on Broadway to enjoy an amazing live performance, but don't worry we can still help you if you
+						are.
+					</p>
+				</div>
+			</div>
+			<div class="image fit round ">
+				<img class="mySlides" src="images/music/1.jpg" alt="" />
+				<img class="mySlides" src="images/CommunityEvents/1.jpg" alt="" />
+				<img class="mySlides" src="images/sports/1.jpg" alt="" />
+				<img class="mySlides" src="images/music/2.jpg" alt="" />
+				<img class="mySlides" src="images/theater/4.jpg" alt="" />
+				<img class="mySlides" src="images/CommunityEvents/2.jpg" alt="" />
+				<img class="mySlides" src="images/sports/2.jpg" alt="" />
+
+			</div>
+			<div class="flex-item right">
+				<div>
+					<h3>Sports</h3>
+					<p>Cheer on your favorite local, regional and national teams.</p>
+				</div>
+				<div>
+					<h3>Community Events</h3>
+					<p>(Coming Soon) Connect with the neighborhood at local events such as community BBQs, religious services, government functions,
+						and other special community events.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper style1 special">
+		<div class="inner">
+			<h2>What's Next?</h2>
+			<figure>
+				<blockquote>
+					"When you're finished changing, you're finished."
+				</blockquote>
+				<footer>
+					<cite class="author">Ben Franklin</cite>
+					<cite class="company">Inventor, Statesman, and Diplomat.</cite>
+				</footer>
+			</figure>
+			<h3>Just like Mr. Franklin we believe you have to always keep working to grow. We can enjoy what we've done, but we can't
+				be held back by it. Below are some of the other areas we are looking into exploring with you in the comming months.</h3>
+		</div>
+	</section>
+
+	<!-- Three -->
+	<section id="three" class="wrapper">
+		<div class="inner flex flex-3">
+			<div class="flex-item box">
+				<div class="image fit">
+					<img src="images/pic02.jpg" alt="" />
+				</div>
+				<div class="content">
+					<h3>Outdoor Adventures</h3>
+					<p>Hiking, biking or waterboarding, it doesn't matter you try just get outside and have some fun with your friends and
+						neighbors.
+					</p>
+				</div>
+			</div>
+			<div class="flex-item box">
+				<div class="image fit">
+					<img src="images/pic03.jpg" alt="" />
+				</div>
+				<div class="content">
+					<h3>Sightseeing</h3>
+					<p>National and State and Local national parks have special tours and events happing in your area.</p>
+				</div>
+			</div>
+			<div class="flex-item box">
+				<div class="image fit">
+					<img src="images/pic04.jpg" alt="" />
+				</div>
+				<div class="content">
+					<h3>Art and Museums</h3>
+					<p>Appreciate the finer arts at your city or state museums or support local artists at independent galleries and shows.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>Get In Touch</h2>
+			<ul class="actions">
+				<li><span class="icon fa-phone"></span> <a href="#">(000) 000-0000</a></li>
+				<li><span class="icon fa-envelope"></span> <a href="#">information@untitled.tld</a></li>
+				<li><span class="icon fa-map-marker"></span> 123 Somewhere Road, Nashville, TN 00000</li>
+			</ul>
+		</div>
+		<div class="copyright">
+			<h2>Creative Commons</h2>The Rough CSS Template for the Event Hub site design was provided by:<br> &copy; Untitled. Design
+			<a href="https://templated.co">TEMPLATED</a>. Images <a href="https://unsplash.com">Unsplash</a>.<br> The template was
+			altered and expanded in order to accompidate the needs of the Event Hub app.
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/imgSlideShow.js"></script>
 
 </body>
 
