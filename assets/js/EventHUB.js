@@ -34,7 +34,7 @@ function mapEvents(map, position) {
             // console.log(json);
             var events = json._embedded.events;
             var e = document.getElementById("events");
-            e.innerHTML = events.length + " events found. Click the markers on the map for more information.";
+            e.innerHTML = events.length + " events found. Click the markers on the map for more information on a specific venue.";
 
             console.log(json);
             for (var i = 0; i < events.length; i++) {
@@ -53,7 +53,7 @@ function addMarker(map, event) {
     if (event._embedded.venues[0].images) {
         venuepic = event._embedded.venues[0].images[0].url;
     } else {
-        venuepic = "misc/noimg.jpg";
+        venuepic = "images/noimg.jpg";
     };
     var contentString = "<div class='eventListing'><img src='" + venuepic + "' alt='" + event._embedded.venues[0].name + "' class='eventImg'><p><a href='" + event._embedded.venues[0].url +
         "'><h1 class='venueName'>" + event._embedded.venues[0].name + "</h1></a></p><p><h3 class 'venueAddress>" + event._embedded.venues[0].address.line1 + "</h3></p></div>";

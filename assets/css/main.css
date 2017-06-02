@@ -3101,3 +3101,26 @@ body.is-loading #banner .content {
 		padding: 2em 0;
 	}
 }
+
+
+/* Map */
+
+#map {
+	/*width: 500px;*/
+	height: 400px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+
+/* Map: Venue pop-up window */
+
+.eventImg {
+	max-height: 50px;
+	float: left;
+}
+
+.venueName,
+.venueAddress {
+	margin: 0 auto;
+}

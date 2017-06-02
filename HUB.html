@@ -39,11 +39,22 @@
 		<div class="inner">
 			<header class="align-center">
 				<h1>Your EventHUB</h1>
-				<p>We'll ask your browser for your current locaton. It'll need your promission to share in order to protect your privacy.<br>					After you allow it to share your location, your Event Hub will search all the amazing events going on in your area and
+				<p id="location">We'll ask your browser for your current locaton. It'll need your promission to share in order to protect your privacy.<br>					After you allow it to share your location, your Event Hub will search all the amazing events going on in your area and
 					even show you them on the map.</p>
 			</header>
-			<div class="image fit">
-				<img src="images/pic05.jpg" alt="" />
+			<div id="events"></div>
+			<div id="map" class="flex"></div>
+			<div id="venue"></div>
+			<div id="list">
+				<table id="listTable">
+					<tr>
+						<th>Artist</th>
+						<th>Venue</th>
+						<th>Time</th>
+						<th>Date</th>
+						<th>Tickets</th>
+					</tr>
+				</table>
 			</div>
 			<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare
 				mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing
@@ -85,9 +96,13 @@
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCB389GmtyB3Wk0Wz2sKPlXoADFIahOS8&callback=initMap" async
+	    defer></script>
+	<script src="assets/js/EventHUB.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
 
 </body>
 
