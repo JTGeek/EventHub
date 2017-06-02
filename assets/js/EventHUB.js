@@ -14,8 +14,10 @@ function initMap(position) {
 
         });
     } else {
-        var x = document.getElementById("location");
-        x.innerHTML = "Geolocation is not supported by this browser.";
+        var x = document.getElementById('map');
+        var y = document.getElementById('list');
+        x.innerHTML = "<h1>Geolocation is not supported by this browser.</h1>";
+        y.style.display = "none";
         //potential add: if no geolocation: enter zip instead
     }
 }
