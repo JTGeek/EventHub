@@ -2498,6 +2498,15 @@ button:disabled,
 }
 
 
+/*
+@media screen and (max-width: 979px) {
+	.w3-display-container {
+		text-align: center;
+		margin: 0 auto;
+	}
+}*/
+
+
 /* Flex */
 
 .flex {
@@ -2591,6 +2600,7 @@ button:disabled,
 @media screen and (max-width: 980px) {
 	.wrapper {
 		padding: 3em 0 1em 0;
+		text-align: center;
 	}
 }
 
