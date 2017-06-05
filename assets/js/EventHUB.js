@@ -82,7 +82,7 @@ function addMarker(map, event) {
 
 function showEvents(event) {
     console.log("list item" + event);
-    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.dates.start.localTime + "</td><td>" + event.dates.start.localDate + "</td><td>" + "<a href='" + event.url + "'>Buy Tickets</a></td></tr>");
+    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.dates.start.localTime + "</td><td>" + event.dates.start.localDate + "</td><td>" + "<a href='" + event.url + "'><button>Buy Tickets</button></a></td></tr>");
 
 
     // $("#name").append("<p>" + event.name + "</a></p>");

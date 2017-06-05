@@ -2489,6 +2489,15 @@ button:disabled,
 }
 
 
+/*  Slideshow*/
+
+@media screen and (min-width: 980px) {
+	.right {
+		text-align: right;
+	}
+}
+
+
 /* Flex */
 
 .flex {
