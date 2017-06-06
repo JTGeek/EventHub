@@ -2691,6 +2691,18 @@
 				min-width: 320px;
 			}
 		}
+
+		.large {
+			height: 3.5em;
+			line-height: 3.5em;
+			padding: 0 3.5em;
+		}
+
+		.float {
+			display: block;
+			margin: 0 auto;
+			width: 25%;
+		}
 		/* Menu */
 
 		#menu {
