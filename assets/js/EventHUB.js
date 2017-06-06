@@ -58,7 +58,7 @@ function addMarker(map, event) {
         venuepic = "images/noimg.jpg";
     };
     var contentString = "<div class='eventListing'><img src='" + venuepic + "' alt='" + event._embedded.venues[0].name + "' class='eventImg'><p><a href='" + event._embedded.venues[0].url +
-        "'><h1 class='venueName'>" + event._embedded.venues[0].name + "</h1></a></p><p><h3 class 'venueAddress>" + event._embedded.venues[0].address.line1 + "</h3></p></div>";
+        "'><h3 class='venueName'>" + event._embedded.venues[0].name + "</h3></a></p><p><h4 class 'venueAddress>" + event._embedded.venues[0].address.line1 + "</h4></p></div>";
 
     var infowindow = new google.maps.InfoWindow({
         content: contentString
@@ -82,7 +82,11 @@ function addMarker(map, event) {
 
 function showEvents(event) {
     console.log("list item" + event);
-    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.dates.start.localTime + "</td><td>" + event.dates.start.localDate + "</td><td>" + "<a href='" + event.url + "'><button>Buy Tickets</button></a></td></tr>");
+    var eventDT = (event.dates.start.localDate + ", " + event.dates.start.localTime)
+    var d1 = new Date.parse(eventDT);
+    // var d2 = eventDT.parse
+    console.log("date: " + d1);
+    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.distance + " miles</td><td>" + d1.toString('dddd, MM/dd/dd') + "</td><td>" + d1.toString('h: mm t') + "</td><td>" + "<a href='" + event.url + "'><button>Buy Tickets</button></a></td></tr>");
 
 
     // $("#name").append("<p>" + event.name + "</a></p>");
