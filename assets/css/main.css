@@ -2467,6 +2467,10 @@
 		/*  Slideshow*/
 
 		@media screen and (min-width: 980px) {
+			.left,
+			.right {
+				max-width: 25%;
+			}
 			.right {
 				text-align: right;
 			}
