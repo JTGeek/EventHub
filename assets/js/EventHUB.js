@@ -45,7 +45,7 @@ function mapEvents(map, position) {
             e.innerHTML = events.length + " events found. Click the markers on the map for more information on a specific venue.";
 
             console.log(json);
-            for (var i = 0; i < events.length || 11; i++) {
+            for (var i = 0; i < events.length; i++) {
                 var event = events[i];
                 addMarker(map, event);
             };
@@ -73,7 +73,7 @@ function addMarker(map, event) {
     //console.log(event._embedded.venues[0].name);
 
     var geocoder = new google.maps.Geocoder();
-    var address = JSON.stringify(event._embedded.venues[0].address);
+    var address = event._embedded.venues[0].address;
 
     geocoder.geocode({
         'address': address
@@ -84,11 +84,6 @@ function addMarker(map, event) {
                 map: map,
                 position: results[0].geometry.location
             });
-            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
-            marker.addListener('click', function () {
-                infowindow.open(map, marker);
-            });
-            showEvents(event);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
@@ -100,9 +95,12 @@ function addMarker(map, event) {
     // });
 
 
+    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
 
-
-
+    marker.addListener('click', function () {
+        infowindow.open(map, marker);
+    });
+    showEvents(event);
 }
 
 function showEvents(event) {
