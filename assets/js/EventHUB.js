@@ -36,6 +36,7 @@ function mapEvents(map, position) {
         type: "GET",
         url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=5QGCEXAsJowiCI4n1uAwMlCGAcSNAEmG&latlong=" + latlon,
         async: true,
+        data: JSON.stringify(obj),
         dataType: "json",
         success: function (json) {
             //filter out json array, for images and embedded subdoc
