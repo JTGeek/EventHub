@@ -36,7 +36,6 @@ function mapEvents(map, position) {
         type: "GET",
         url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=5QGCEXAsJowiCI4n1uAwMlCGAcSNAEmG&latlong=" + latlon,
         async: true,
-        data: JSON.stringify(obj),
         dataType: "json",
         success: function (json) {
             //filter out json array, for images and embedded subdoc
@@ -74,7 +73,7 @@ function addMarker(map, event) {
     //console.log(event._embedded.venues[0].name);
 
     var geocoder = new google.maps.Geocoder();
-    var address = event._embedded.venues[0].address;
+    var address = event._embedded.venues[0].address.stringify();
 
     geocoder.geocode({
         'address': address
