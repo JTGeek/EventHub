@@ -66,10 +66,27 @@ function addMarker(map, event) {
     });
     //console.log(event._embedded.venues[0].name);
 
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
-        map: map
+    var geocoder = new google.maps.Geocoder();
+    var address = event._embedded.venues[0].address;
+
+    geocoder.geocode({
+        'address': address
+    }, function (results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
     });
+
+    // var marker = new google.maps.Marker({
+    //     position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
+    //     map: map
+    // });
 
 
     marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
