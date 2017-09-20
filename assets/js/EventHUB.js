@@ -1,8 +1,4 @@
-$(document).ready(function () {
-
-
-
-    // function initMap(position) {
+function initMap(position) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var mapDiv = document.getElementById('map');
@@ -24,9 +20,7 @@ $(document).ready(function () {
         y.style.display = "none";
         //potential add: if no geolocation: enter zip instead
     }
-    // }
-
-});
+}
 
 
 function mapEvents(map, position) {
@@ -47,6 +41,7 @@ function mapEvents(map, position) {
             console.log(json);
             for (var i = 0; i < events.length; i++) {
                 var event = events[i];
+                showEvents(event);
                 addMarker(map, event);
             };
 
@@ -72,27 +67,10 @@ function addMarker(map, event) {
     });
     //console.log(event._embedded.venues[0].name);
 
-    var geocoder = new google.maps.Geocoder();
-    var address = event._embedded.venues[0].address;
-
-    geocoder.geocode({
-        'address': address
-    }, function (results, status) {
-        if (status === google.maps.GeocoderStatus.OK) {
-            resultsMap.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-            });
-        } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
+        map: map
     });
-
-    // var marker = new google.maps.Marker({
-    //     position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
-    //     map: map
-    // });
 
 
     marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
@@ -100,7 +78,7 @@ function addMarker(map, event) {
     marker.addListener('click', function () {
         infowindow.open(map, marker);
     });
-    showEvents(event);
+
 }
 
 function showEvents(event) {
@@ -109,9 +87,7 @@ function showEvents(event) {
     var d1 = new Date.parse(eventDT);
     // var d2 = eventDT.parse
     console.log("date: " + d1);
-    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.distance +
-        " miles</td><td>" + d1.toString('dddd, MM/dd/dd') + "</td><td>" + d1.toString('h: mm t') +
-        "</td><td>" + "<a target='_new' rel='noopener' href='" + event.url + "'><button>Buy Tickets</button></a></td></tr>");
+    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.distance + " miles</td><td>" + d1.toString('dddd, MM/dd/dd') + "</td><td>" + d1.toString('h: mm t') + "</td><td>" + "<a target='_new' rel='noopener' href='" + event.url + "'><button>Buy Tickets</button></a></td></tr>");
 
 
     // $("#name").append("<p>" + event.name + "</a></p>");
