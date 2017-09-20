@@ -1,3 +1,8 @@
+$(document).ready(function () {
+    initMap;
+});
+
+
 function initMap(position) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -103,7 +108,9 @@ function showEvents(event) {
     var d1 = new Date.parse(eventDT);
     // var d2 = eventDT.parse
     console.log("date: " + d1);
-    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.distance + " miles</td><td>" + d1.toString('dddd, MM/dd/dd') + "</td><td>" + d1.toString('h: mm t') + "</td><td>" + "<a target='_new' rel='noopener' href='" + event.url + "'><button>Buy Tickets</button></a></td></tr>");
+    $("#listTable").append("<tr><td>" + event.name + "</td><td>" + event._embedded.venues[0].name + "</td><td>" + event.distance +
+        " miles</td><td>" + d1.toString('dddd, MM/dd/dd') + "</td><td>" + d1.toString('h: mm t') +
+        "</td><td>" + "<a target='_new' rel='noopener' href='" + event.url + "'><button>Buy Tickets</button></a></td></tr>");
 
 
     // $("#name").append("<p>" + event.name + "</a></p>");
