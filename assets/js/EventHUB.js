@@ -41,7 +41,6 @@ function mapEvents(map, position) {
             console.log(json);
             for (var i = 0; i < events.length; i++) {
                 var event = events[i];
-                showEvents(event);
                 addMarker(map, event);
             };
 
@@ -78,7 +77,7 @@ function addMarker(map, event) {
     marker.addListener('click', function () {
         infowindow.open(map, marker);
     });
-
+    showEvents(event);
 }
 
 function showEvents(event) {
