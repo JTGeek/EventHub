@@ -73,7 +73,7 @@ function addMarker(map, event) {
     //console.log(event._embedded.venues[0].name);
 
     var geocoder = new google.maps.Geocoder();
-    var address = event._embedded.venues[0].address.stringify();
+    var address = JSON.stringify(event._embedded.venues[0].address);
 
     geocoder.geocode({
         'address': address
