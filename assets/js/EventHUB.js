@@ -67,7 +67,7 @@ function addMarker(map, event) {
     //console.log(event._embedded.venues[0].name);
 
     var marker = new google.maps.Marker({
-        position: new google.maps.address(event._embedded.venues[0].address.line1),
+        position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
         map: map
     });
 
