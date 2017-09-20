@@ -1,9 +1,8 @@
 $(document).ready(function () {
-    initMap;
-});
 
 
-function initMap(position) {
+
+    // function initMap(position) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var mapDiv = document.getElementById('map');
@@ -25,7 +24,9 @@ function initMap(position) {
         y.style.display = "none";
         //potential add: if no geolocation: enter zip instead
     }
-}
+    // }
+
+});
 
 
 function mapEvents(map, position) {
