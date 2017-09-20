@@ -45,7 +45,7 @@ function mapEvents(map, position) {
             e.innerHTML = events.length + " events found. Click the markers on the map for more information on a specific venue.";
 
             console.log(json);
-            for (var i = 0; i < events.length; i++) {
+            for (var i = 0; i < events.length || 11; i++) {
                 var event = events[i];
                 addMarker(map, event);
             };
