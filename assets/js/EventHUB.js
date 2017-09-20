@@ -84,6 +84,11 @@ function addMarker(map, event) {
                 map: map,
                 position: results[0].geometry.location
             });
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+            showEvents(event);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
@@ -95,12 +100,9 @@ function addMarker(map, event) {
     // });
 
 
-    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
 
-    marker.addListener('click', function () {
-        infowindow.open(map, marker);
-    });
-    showEvents(event);
+
+
 }
 
 function showEvents(event) {
