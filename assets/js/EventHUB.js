@@ -52,35 +52,35 @@ function mapEvents(map, position) {
 }
 
 function addMarker(map, event) {
-    if (event._embedded.venues[0].images) {
-        venuepic = event._embedded.venues[0].images[0].url;
-    } else {
-        venuepic = "images/noimg.jpg";
-    };
-    var contentString = "<div class='eventListing'><img src='" + venuepic + "' alt='" + event._embedded.venues[0].name + "' class='eventImg'><p><a href='" + event._embedded.venues[0].url +
-        "'><h3 class='venueName'>" + event._embedded.venues[0].name + "</h3></a></p><p><h4 class 'venueAddress>" + event._embedded.venues[0].address.line1 + "</h4></p></div>";
+    // if (event._embedded.venues[0].images) {
+    //     venuepic = event._embedded.venues[0].images[0].url;
+    // } else {
+    //     venuepic = "images/noimg.jpg";
+    // };
+    // var contentString = "<div class='eventListing'><img src='" + venuepic + "' alt='" + event._embedded.venues[0].name + "' class='eventImg'><p><a href='" + event._embedded.venues[0].url +
+    //     "'><h3 class='venueName'>" + event._embedded.venues[0].name + "</h3></a></p><p><h4 class 'venueAddress>" + event._embedded.venues[0].address.line1 + "</h4></p></div>";
 
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString
+    // var infowindow = new google.maps.InfoWindow({
+    //     content: contentString
 
-    });
-    //console.log(event._embedded.venues[0].name);
+    // });
+    // //console.log(event._embedded.venues[0].name);
 
-    if (event._embedded.venues[0].location) {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
-            map: map
-        });
+    // if (event._embedded.venues[0].location) {
+    //     var marker = new google.maps.Marker({
+    //         position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
+    //         map: map
+    //     });
 
-    };
+    // };
 
 
 
-    marker.setIcon('images/map/red-dot.png');
+    // marker.setIcon('images/map/red-dot.png');
 
-    marker.addListener('click', function () {
-        infowindow.open(map, marker);
-    });
+    // marker.addListener('click', function () {
+    //     infowindow.open(map, marker);
+    // });
     showEvents(event);
 }
 
