@@ -66,10 +66,14 @@ function addMarker(map, event) {
     });
     //console.log(event._embedded.venues[0].name);
 
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
-        map: map
-    });
+    if (event._embedded.venues[0].location.latitude) {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
+            map: map
+        });
+
+    };
+
 
 
     marker.setIcon('images/map/red-dot.png');
