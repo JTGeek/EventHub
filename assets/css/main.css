@@ -1487,12 +1487,12 @@
 
 		.inner {
 			margin: 0 auto;
-			max-width: 65em;
+			/* max-width: 65em; */
 		}
 
 		@media screen and (max-width: 1280px) {
 			.inner {
-				max-width: 90%;
+				max-width: 95%;
 			}
 		}
 
